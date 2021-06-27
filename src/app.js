@@ -9,8 +9,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/register', (req, res) => {
+    const {
+        body: { email }
+    } = req;
+
     res.send({
-        message: `Hello ${req.body.email}! Your user was registered! Have fun!`
+        message: `Hello ${email}! Your user was registered! Have fun!`
     });
 });
 
