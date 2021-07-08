@@ -12,6 +12,7 @@ app.use(cors());
 
 require('./routes')(app);
 
-sequelize.sync();
-app.listen(port || 3001);
-console.log(`Server started on ${port}`);
+sequelize.sync().then(() => {
+    app.listen(port || 3001);
+    console.log(`Server started on ${port}`);
+});
