@@ -2,13 +2,12 @@ module.exports = {
     port: process.env.PORT || 3000,
 
     db: {
-        database: process.env.DB_NAME || 'tabtracker',
-        user: process.env.DB_USER || 'tabtracker',
-        password: process.env.DB_PASS || 'tabtracker',
+        database: process.env.DATABASE_NAME || 'tabtracker',
+        user: process.env.DATABASE_USERNAME || 'tabtracker',
+        password: process.env.DATABASE_PASSWORD || 'tabtracker',
         options: {
-            dialect: process.env.DIALECT || 'sqlite',
-            host: process.env.HOST || 'localhost',
-            storage: './tabtracker.sqlite'
+            dialect: process.env.DATABASE_DIALECT || 'mysql',
+            host: process.env.DATABASE_HOST || '127.0.0.1'
         }
     }
 };
