@@ -5,7 +5,11 @@ module.exports = {
         const { body } = req;
 
         try {
-            const user = await User.create(body);
+            const { id } = await User.create(body);
+
+            const user = await User.findOne({
+                where: { id }
+            });
 
             res.send(user.toJSON());
         } catch (error) {
