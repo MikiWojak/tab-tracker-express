@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) =>
             }
         },
         {
+            timestamps: true,
+            paranoid: true,
+
             defaultScope: {
                 attributes: { exclude: ['password'] }
             },
